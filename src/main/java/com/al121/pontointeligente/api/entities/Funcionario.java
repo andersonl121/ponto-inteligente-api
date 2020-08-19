@@ -33,7 +33,7 @@ public class Funcionario implements Serializable{
 	private Empresa empresa;
 	private List<Lancamento> lancamentos;
 	
-	Funcionario(){
+	public Funcionario(){
 		
 	}
 	
@@ -108,16 +108,17 @@ public class Funcionario implements Serializable{
 		this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
 	}
 	
-	@Column(name="qtdHorasAlmoco",nullable=false)
+	@Column(name="qtdHorasAlmoco",nullable=true)
 	public Float getQtdHorasAlmoco() {
 		return qtdHorasAlmoco;
 	}
+	
 	public void setQtdHorasAlmoco(Float qtdHorasAlmoco) {
 		this.qtdHorasAlmoco = qtdHorasAlmoco;
 	}
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="nome",nullable=false)
+	@Column(name="perfil",nullable=false)
 	public PerfilEnum getPerfil() {
 		return perfil;
 	}
